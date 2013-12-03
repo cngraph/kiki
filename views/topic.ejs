@@ -1,0 +1,19 @@
+<% include top %>
+<div id="container" class="container detail-box">
+	<p class="title">
+		<a href="/u/<%= users %>" title="<%= author %>"><img src="<%= avatar %>" alt="<%= author %>" style="margin-right:10px;width:50px;height:50px;border-radius:25px;"/></a> ：
+		<span class="t1"><%= talktitle %></span>
+		<span class="time">发表时间：<%= time%></span>
+		<a class="goback" href="/">返回首页</a>
+	</p>
+	<p class="content"><%= post %></p>
+</div>
+
+<!-- 登录后浏览有回复  -->
+<% if(user) { %>
+	<% include comment %>
+<% } else{%>
+<div class="container detail-box" style="text-align:center;font-size:12px;line-height:30px;background-color:#f1f1f1;"> <a href="/login">登录</a>后，可以查看评论！</div>
+<% } %>
+
+<% include footer %>

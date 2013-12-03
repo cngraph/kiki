@@ -1,0 +1,11 @@
+<% include top %>
+<div id="container" class="container">
+	<% if (!locals.user) { %>
+		<!-- 登录前的内容 -->
+	<% } else { %>
+		<!-- 登录后的内容 -->
+		<% include say %>
+	<% } %>
+		<% include posts %>
+</div>
+<% include footer %>

@@ -1,0 +1,10 @@
+<% include top %>
+<div id="container" class="container">
+	<form method="post" enctype="multipart/form-data" action="/file-upload">
+	  <h2>我的头像</h2>
+	  <img src="<%= person.avatar%>" style="margin:10px;height:200px;"/><br/>
+	  <input type="file" name="thumbnail">
+	  <input type="submit" value="上传">
+	</form>
+</div>
+<% include footer %>

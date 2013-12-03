@@ -1,0 +1,14 @@
+<% comment.forEach(function(post,index){ %>
+	<div class="container comment-list">
+		<p class="title"><a href="/u/<%= post.user %>" title="<%= post.user%>"><img src="<%= post.avatar%>" alt="<%= post.user%>" style="margin-right:10px;width:30px;height:30px;border-radius:15px;"/></a> <span class="green">回复</span>： <%= post.talktitle%></p>
+		<p class="content"><%= post.post%></p>
+	</div>
+<% }) %>
+<div class="container">
+	<form method="post" action="/backpost" class="well form-inline center" style="text-align:center;">
+		<input type="text" class="span8" name="talkTitle" style="margin-bottom:15px;"><br/>
+		<textarea class="span8" name="post" style="margin-bottom:15px;"></textarea><br/>
+		<input type="hidden" name="parentid" value="<%= id %>" />
+		<button type="submit" class="btn btn-success span2" style="margin-left:75px;"><i class="icon-comment icon-white"></i> 回复</button><br/><br/>
+	</form>
+</div>
